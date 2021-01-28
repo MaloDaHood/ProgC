@@ -1,23 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
+//#include "proto.h"
 
-void decoupeMinutes(int *pointeurHeures, int *pointeurMinutes);
+void copie(int tableauOriginal[], int tableauCopie[], int tailleTableau);
 
 int main(int argc, char *argv[])
 {
-    int heures = 0, minutes = 90;
-
-    decoupeMinutes(&heures, &minutes);
-
-    printf("%d heures et %d minutes", heures, minutes);
-
+    int tableauOriginal[4]={10, 15, 3}, tableauCopie[4]={0}, i;
+    printf("=== Tableau Original ===\n");
+    for(i=0;i<4;i++)
+    {
+        printf("%d\n", tableauOriginal[i]);
+    }
+    printf("=== Tableau Copie ===\n");
+    copie(tableauOriginal, tableauCopie, 4);
     return 0;
 }
 
-void decoupeMinutes(int *pointeurHeures, int *pointeurMinutes)
+void copie(int tableauOriginal[], int tableauCopie[], int tailleTableau)
 {
-    *pointeurHeures = *pointeurMinutes / 60;  // 90 / 60 = 1
-    *pointeurMinutes = *pointeurMinutes % 60; // 90 % 60 = 30
+    int i;
+    for(i=0;i<tailleTableau;i++)
+    {
+        tableauCopie[i]=tableauOriginal[i];
+        printf("%d\n", tableauCopie[i]);
+    }
 }
-
-// TEST
