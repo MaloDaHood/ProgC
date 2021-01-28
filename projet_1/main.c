@@ -19,3 +19,5 @@ void decoupeMinutes(int *pointeurHeures, int *pointeurMinutes)
     *pointeurHeures = *pointeurMinutes / 60;  // 90 / 60 = 1
     *pointeurMinutes = *pointeurMinutes % 60; // 90 % 60 = 30
 }
+
+// TEST
