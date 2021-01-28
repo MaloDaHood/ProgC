@@ -98,5 +98,3 @@ int main(int argc, char *argv[]) // essentiel = toujours au début
     }
     return 0; // fin du programme
 }
-
-//YOOOOOOOOOOOOOOOOOOOO
