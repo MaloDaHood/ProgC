@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "proto.h"
+#include "main.h"
 
 int main(int argc, char *argv[])
 {
@@ -21,7 +21,8 @@ void ordonnerTableau(int tableau[], int tailleTableau)
 
 int stock(int valeurTableau, int i)
 {
-    int valeurZero, valeurOne, valeurTwo, valeurThree, x=0-1; 
+    int x=-1;
+    int valeurZero=x, valeurOne=x, valeurTwo=x, valeurThree=x; 
     if(i==0)
     {
         valeurZero=valeurTableau;
@@ -48,7 +49,7 @@ int stock(int valeurTableau, int i)
         return 1;
     }
 
-    if(valeurZero>x&&valeurOne>x&&valeurTwo>x&&valeurThree>x)  // ERREUR ICI
+    if(valeurZero!=x&&valeurOne!=x&&valeurTwo!=x&&valeurThree!=x)  // ERREUR ICI
     {
         printf("%d\n%d\n%d\n%d", valeurZero, valeurOne, valeurTwo, valeurThree);  // NON OK
         comparateur(valeurZero, valeurOne, valeurTwo, valeurThree);
@@ -57,5 +58,5 @@ int stock(int valeurTableau, int i)
 
 int comparateur(int nb0, int nb1, int nb2, int nb3)
 {
-    //printf("%d\n %d\n %d\n %d\n", nb0, nb1, nb2, nb3);  // NON OK 
+    printf("%d\n %d\n %d\n %d\n", nb0, nb1, nb2, nb3);  // NON OK 
 }
