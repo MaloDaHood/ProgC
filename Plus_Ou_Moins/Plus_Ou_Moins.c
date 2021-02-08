@@ -1,23 +1,21 @@
-#include <stdio.h> // =import ESSENTIEL
-#include <math.h>
-#include <stdlib.h>
-#include <time.h>
+#include "POM.h"
 
 int main(int argc, char *argv[]) // essentiel = toujours au début
 {
     int rejouer=1;
     while(rejouer)
     {
-        printf("\n");
+        printf("\nNouvelle partie de Plus Ou Moins.\n\n");
         int nombreMystere, inputNumber=0, compteur=0, MAX=0, player=0, out=0;
         const int MIN=0;
+        char nomJoueur1[MAX_LENGHT]="", nomJoueur2[MAX_LENGHT]="";
         printf("=== DIFFICULTE ===\n1. Facile (0/100)\n2. Moyen (0/1000)\n3. Difficile (0/10000)\n==================\n>>");
         scanf("%d", &MAX);
         switch(MAX)
         {
             case 1:
                 MAX=100;
-                printf("Vous avez choisi le mode simple.\n");
+                printf("Vous avez choisi le mode facile.\n");
                 break;
             case 2:
                 MAX=1000;
@@ -31,17 +29,22 @@ int main(int argc, char *argv[]) // essentiel = toujours au début
                 printf("Vous devez ecrire 1. 2 ou 3.");
                 exit(0);
         }
-        printf("=== NOMBRE DE JOUEURS ===\n1. Un Joueur\n2. Deux Joueurs\n=========================\n>>");
+        printf("\n=== NOMBRE DE JOUEURS ===\n1. Un Joueur\n2. Deux Joueurs\n=========================\n>>");
         scanf("%d", &player);
         switch(player)
         {
             case 1:
-                printf("Vous avez choisi le mode un joueur.\n");
+                printf("Vous avez choisi le mode un joueur.\nQuel est votre nom ?\n>");
+                scanf("%s", nomJoueur1);
                 srand(time(NULL));
                 nombreMystere = (rand() % (MAX - MIN + 1)) + MIN;
                 break;
             case 2:
-                printf("Vous avez choisi le mode deux joueurs.\nLe premier joueur choisi le chiffre mystere.\n");
+                printf("Vous avez choisi le mode deux joueurs.\nQuel est le nom du premier joueur ?\n>");
+                scanf("%s", nomJoueur1);
+                printf("Quel est le nom du deuxieme joueur ?\n>");
+                scanf("%s", nomJoueur2);
+                printf("%s choisi le chiffre mystere et %s regarde pas !\n", nomJoueur1, nomJoueur2);
                 scanf("%d", &nombreMystere);
                 while(nombreMystere<MIN||nombreMystere>MAX)
                 {
