@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 void afficher(int nombreDeFois)
 {
@@ -41,6 +42,6 @@ int main(int argc, char *argv[])
             printf("\n");
         }
     }
-    getchar();
+    getch();
     return 0;
 }
