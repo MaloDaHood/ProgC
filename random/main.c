@@ -29,8 +29,7 @@ int main(int argc, char *argv[])
     while(repeat!=0)
     {
         repeat--;
-        int nombreDeFois=0, i=0;
-        nombreDeFois=nbFois;
+        int nombreDeFois=nbFois, i=0;
         for(i=nombreDeFois;i>0;i--)
         {
             afficher(nombreDeFois-i);
