@@ -43,8 +43,6 @@ int nombreJoueurs(int MAX)
     switch(player)
     {
         case 1:
-            printf("Vous avez choisi le mode un joueur.\nQuel est votre nom ?\n>");
-            scanf("%s", nomJoueur1);
             srand(time(NULL));
             return nombreMystere=(rand()%(MAX-MINIMUM+1))+MINIMUM;
         case 2:
@@ -52,7 +50,7 @@ int nombreJoueurs(int MAX)
             scanf("%s", nomJoueur1);
             printf("Quel est le nom du deuxieme joueur ?\n>");
             scanf("%s", nomJoueur2);
-            printf("%s choisi le chiffre mystere et %s regarde pas !\n", nomJoueur2, nomJoueur1);
+            printf("%s choisi le chiffre mystere et %s regarde pas !\n>>", nomJoueur2, nomJoueur1);
             scanf("%d", &nombreMystere);
             while(nombreMystere<MINIMUM||nombreMystere>MAX)
             {
