@@ -4,7 +4,14 @@
 
 int main(int argc, char *argv[])
 {
-    int tableau[4]={15, 22, 81, 13};
+    int i, tableau[4]={0};
+    printf("\n=== PASSAGE D'UN TABLEAU DE 4 VALEURS DANS UN ORDRE CROISSANT ===\n");
+    for(i=0;i<4;i++)
+    {
+        printf("\n");
+        printf("Valeurs numero %d du tableau ?\n", i);
+        scanf("%d", &tableau[i]);
+    }
     ordonnerTableau(tableau, 4);
     return 0;
 }
@@ -32,12 +39,12 @@ void ordonnerTableau(int tableau[], int tailleTableau)
         }
         
     }
+    printf("\ntableau = {%d, %d, %d, %d}\n", valeurZero, valeurOne, valeurTwo, valeurThree);
     comparateur(valeurZero, valeurOne, valeurTwo, valeurThree);
 }
 
 int comparateur(int v0, int v1, int v2, int v3)
 {
-    //printf("%d\n%d\n%d\n%d\n", v0, v1, v2, v3);
     int max, midHigh, midLow, min;
     if(v0>v1&&v0>v2&&v0>v3)
     {
@@ -223,5 +230,14 @@ int comparateur(int v0, int v1, int v2, int v3)
             }
         }
     }
-    printf("%d\n%d\n%d\n%d", max, midHigh, midLow, min);
+    tableauCopie(max, midHigh, midLow, min);
+}
+void tableauCopie(int max, int midHigh, int midLow, int min)
+{
+    int tableau2[4]={0}, i;
+    tableau2[0]=min;
+    tableau2[1]=midLow;
+    tableau2[2]=midHigh;
+    tableau2[3]=max;
+    printf("tableauCopie = {%d, %d, %d, %d}\n\n", tableau2[0], tableau2[1], tableau2[2], tableau2[3]);
 }
