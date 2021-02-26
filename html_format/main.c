@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <conio.h>
 
 int main(int argc, char *argv[])
 {
@@ -46,5 +47,6 @@ int main(int argc, char *argv[])
     {
         printf("Fichier introuvable ou chemin d'acces introuvable.");
     }
+    getch();
     return 0;
 }
